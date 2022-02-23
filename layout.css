@@ -1,6 +1,11 @@
+@font-face {
+    font-family: TandyOS;
+    src: url('./TandyOS.ttf');
+}
+
 body {
     /* background:purple; */
-    color: purple;
+    color: rgb(0, 68, 255);
     background-image: url("./noteTile.jpeg");
     background-color: #fd9fa7;
     background-blend-mode:soft-light;
@@ -9,10 +14,6 @@ body {
     -moz-animation: scrolling-background 5s linear infinite;
     -o-animation: scrolling-background 5s linear infinite;
     animation: scrolling-background 5s linear infinite;
-}
-@font-face {
-    font-family: TandyOS;
-    src: url('./TandyOS.ttf');
 }
 
 @-webkit-keyframes scrolling-background {
