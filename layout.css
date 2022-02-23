@@ -10,6 +10,10 @@ body {
     -o-animation: scrolling-background 5s linear infinite;
     animation: scrolling-background 5s linear infinite;
 }
+@font-face {
+    font-family: TandyOS;
+    src: url('./TandyOS.ttf');
+}
 
 @-webkit-keyframes scrolling-background {
     from {
@@ -62,7 +66,10 @@ h1 {
 }
 
 .title {
-    background-color: blue;
+    /* background-color: rgba(0, 1, 68, 0.849); */
+    font-family: "TandyOS";
+    color: yellow;
+    font-size: large;
 }
 
 .title-text {
@@ -125,13 +132,14 @@ p {
 }
 
 .header {
-    padding: 5px;
+    padding: 5px 10px;
     margin: 5px;
     font-size: 1em;
     color: #be778d;
     font-weight: Bold;
-    text-shadow: 0 0 5px white;
+    text-shadow: 0px 0px 1px white;
     text-align: right;
+    background-color: blue;
 }
 
 .nav {
@@ -212,7 +220,7 @@ p {
 @media (max-width:499px) {
     .body {
         width: 400px;
-        /* background-image:url("https://cinni.net/fruitykitty/layout/nana-bg-mobile.png"); */
+        /* background-image:url("./noteTile.jpeg"); */
         height: 600px;
         margin-top: 10px;
     }
@@ -228,7 +236,7 @@ p {
     }
 
     .header {
-        background: #fcf1f6;
+        /* background: #fcf1f6; */
     }
 
     .big-tandy {
