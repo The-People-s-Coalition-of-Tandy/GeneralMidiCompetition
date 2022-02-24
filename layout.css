@@ -1,14 +1,14 @@
 @font-face {
     font-family: TandyOS;
-    src: url('./TandyOS.ttf');
+    src: url('./index_files/TandyOS.ttf');
 }
 
 body {
     /* background:purple; */
     color: rgb(0, 68, 255);
-    background-image: url("./noteTile.jpeg");
+    background-image: url("./index_files/noteTile.jpeg");
     background-color: #fd9fa7;
-    background-blend-mode:soft-light;
+    background-blend-mode: soft-light;
     font-family: 'basiic';
     -webkit-animation: scrolling-background 5s linear infinite;
     -moz-animation: scrolling-background 5s linear infinite;
@@ -67,7 +67,6 @@ h1 {
 }
 
 .title {
-    /* background-color: rgba(0, 1, 68, 0.849); */
     font-family: "TandyOS";
     color: yellow;
     font-size: larger;
@@ -100,15 +99,11 @@ p {
     top: 9vh;
     left: 20vw;
     height: 55%;
-      /* filter: hue-rotate(355deg); */
 }
 
 .body {
     margin: 0 auto;
     width: 900px;
-    /* background-image:url("./tandypurp.png");
-      background-size:100% 100%;
-      background-repeat:no-repeat; */
     height: 650px;
     margin-top: 30px;
 }
@@ -130,7 +125,6 @@ p {
     padding: 10px;
     height: 575px;
     margin-top: 30px;
-    /*background:rgba(204,129,247,0.5);*/
 }
 
 .header {
@@ -193,7 +187,6 @@ p {
 .icon {
     width: 100px;
     height: 100px;
-    /* border: 1px solid #be778d; */
     float: right;
     padding: 1px;
     margin: 5px;
@@ -220,25 +213,24 @@ p {
 }
 
 
-.intro{
-  font-size: 410px;
+.intro {
+    font-size: 410px;
 
 }
 
-.small-list{
-  font-size: 12px;
+.small-list {
+    font-size: 12px;
 
 }
 
-.marquee1{
-  color: pink;
+.marquee1 {
+    color: pink;
 
 }
 
 @media (max-width:499px) {
     .body {
         width: 400px;
-        /* background-image:url("./noteTile.jpeg"); */
         height: 600px;
         margin-top: 10px;
     }
@@ -253,26 +245,16 @@ p {
         margin-top: 75px;
     }
 
-    .header {
-        /* background: #fcf1f6; */
-    }
-
     .big-tandy {
         position: absolute;
-        /* width: 100%; */
-        /* height: 10vh; */
         justify-self: center;
         top: 70vh;
         left: 30vw;
         height: 20%;
     }
 
-
     .main-button {
         font-family: "TandyOS";
         position: relative;
     }
-
-
-
 }
