@@ -100,6 +100,7 @@ p {
     top: 9vh;
     left: 20vw;
     height: 55%;
+      /* filter: hue-rotate(355deg); */
 }
 
 .body {
@@ -219,6 +220,20 @@ p {
 }
 
 
+.intro{
+  font-size: 410px;
+
+}
+
+.small-list{
+  font-size: 12px;
+
+}
+
+.marquee1{
+  color: pink;
+
+}
 
 @media (max-width:499px) {
     .body {
@@ -258,15 +273,6 @@ p {
         position: relative;
     }
 
-    .intro{
-      font-size: 40px;
-
-    }
-
-    .small-list{
-      font-size: 12px;
-
-    }
 
 
 }
