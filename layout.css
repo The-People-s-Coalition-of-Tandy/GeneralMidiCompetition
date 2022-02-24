@@ -258,5 +258,15 @@ p {
         position: relative;
     }
 
+    .intro{
+      font-size: 40px;
+
+    }
+
+    .small-list{
+      font-size: 12px;
+
+    }
+
 
 }
