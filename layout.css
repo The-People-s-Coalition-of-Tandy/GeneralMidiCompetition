@@ -218,6 +218,8 @@ p {
     border-radius: 0px;
 }
 
+
+
 @media (max-width:499px) {
     .body {
         width: 400px;
@@ -249,5 +251,12 @@ p {
         left: 30vw;
         height: 20%;
     }
+
+
+    .main-button {
+        font-family: "TandyOS";
+        position: relative;
+    }
+
 
 }
