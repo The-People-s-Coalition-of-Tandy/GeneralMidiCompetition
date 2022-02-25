@@ -4,7 +4,6 @@
 }
 
 body {
-    /* background:purple; */
     color: rgb(0, 68, 255);
     background-image: url("./index_files/noteTile.jpeg");
     background-color: #fd9fa7;
@@ -14,6 +13,15 @@ body {
     -moz-animation: scrolling-background 5s linear infinite;
     -o-animation: scrolling-background 5s linear infinite;
     animation: scrolling-background 5s linear infinite;
+}
+
+.page-grid {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "logo info";
+    justify-items: center;
+    align-items: center;
 }
 
 @-webkit-keyframes scrolling-background {
@@ -29,6 +37,11 @@ body {
 @font-face {
     font-family: 'basiic';
     src: url(https://cinni.net/fonts/basiic.ttf);
+}
+
+@font-face {
+    font-family: 'Bangalore';
+    src: url("./index_files/Bangalore.ttf");
 }
 
 ::selection {
@@ -63,7 +76,8 @@ h1 {
     padding-left: 12px;
     font-weight: bold;
     letter-spacing: 2px;
-    text-align: left;
+    text-align: center;
+font-family: "Bangalore";
 }
 
 .title {
@@ -95,10 +109,9 @@ p {
 }
 
 .big-tandy {
-    position: absolute;
-    top: 9vh;
-    left: 20vw;
-    height: 55%;
+    height: 80%;
+    grid-area: logo;
+    justify-self: end;
 }
 
 .body {
@@ -106,6 +119,7 @@ p {
     width: 900px;
     height: 650px;
     margin-top: 30px;
+    grid-area: info;
 }
 
 .layoutimg {
@@ -119,9 +133,6 @@ p {
 .content {
     z-index: 1;
     position: relative;
-    float: right;
-    width: 50%;
-    valign: top;
     padding: 10px;
     height: 575px;
     margin-top: 30px;
@@ -145,6 +156,7 @@ p {
     border-radius: 2px;
     margin: 5px;
     font-size: .9em;
+    text-align: center;
 }
 
 .nav a {
@@ -158,9 +170,10 @@ p {
     border: 1px solid #be778d;
     border-radius: 2px;
     Margin: 5px;
-    font-size: .9em;
+    font-size: 1em;
     height: 80%;
     overflow: auto;
+    scroll-behavior: smooth;
 }
 
 .blog img {
@@ -168,7 +181,6 @@ p {
     max-width: 80%;
     height: auto;
     margin: 3px;
-
 }
 
 .footer {
@@ -184,12 +196,11 @@ p {
     background: none;
 }
 
-.icon {
-    width: 100px;
-    height: 100px;
+.blog img.icon {
+
     float: right;
     padding: 1px;
-    margin: 5px;
+    margin-right: 10px;
 }
 
 /* Scrollbar styles */
@@ -225,8 +236,8 @@ p {
 
 .marquee1 {
     color: pink;
-
-}
+    background: rgb(0,0,0);
+background: linear-gradient(270deg, rgba(0,0,0,0) 0%, rgb(0, 0, 255) 13%, rgba(0,0,255,1) 82%, rgba(0,0,0,0) 100%);}
 
 @media (max-width:499px) {
     .body {
