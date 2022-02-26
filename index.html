@@ -14,6 +14,8 @@
 
   <!-- button click javascript -->
   <script>
+
+  //Submit Button
     function buttonClick(e) {
       e.src = "./index_files/submitInFixed1.png";
     }
@@ -26,6 +28,20 @@
       window.location = "https://forms.gle/HJ1eoGcQpQohZCWG9";
       e.src = "./index_files/submitFixed1.png";
     }
+
+
+//Signup Button
+    function button2Click(e) {
+      e.src = "./index_files/SignupButtonIn2.png";
+    }
+    function button2Normal(e) {
+      e.src = "./index_files/SignupButtonOut2.png";
+    }
+    function button2Return(e) {
+      window.location = "https://docs.google.com/forms/d/1q1_S66F7YRoDrbmUd51Jf24yH_shd5GC5Gs_gki3H7E/edit?usp=sharing";
+      e.src = "./index_files/SignupButtonOut2.png";
+    }
+
   </script>
   <title>SMoidi Light Competition</title>
 </head>
@@ -48,8 +64,12 @@
           <h1>30th Anniversary SMoidi Light Competition</h1>
           <p class="intro">
             <div class="main-button">
+
               <img src="./index_files/submitFixed1.png" class="icon" onmousedown="buttonClick(this)"
                 onmouseup="buttonReturn(this)" onmouseout="buttonNormal(this)">
+              <img src="./index_files/SignupButtonOut2.png" class="icon" onmousedown="button2Click(this)"
+                  onmouseup="button2Return(this)" onmouseout="button2Normal(this)">
+
 
               <i><b><u>The People’s Coalition of TANDY “GM General Midi,
                 30th Anniversary Warrior of the 30 SMoidi Light 30” ZRainbow Spectrume 2022 300 Award!</b></i></u>
