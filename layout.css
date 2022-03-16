@@ -16,10 +16,11 @@ body {
 }
 
 .page-grid {
-    display: grid;
+    display: flex;
+    /* display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "logo info";
+    grid-template-areas: "logo info"; */
     justify-items: center;
     align-items: center;
 }
@@ -109,8 +110,9 @@ p {
 }
 
 .big-tandy {
-    height: 80%;
-    grid-area: logo;
+    /* height: 80%; */
+    min-width: 235px;
+    /* grid-area: logo; */
     justify-self: end;
 }
 
@@ -119,7 +121,7 @@ p {
     width: 900px;
     height: 650px;
     margin-top: 30px;
-    grid-area: info;
+    /* grid-area: info; */
 }
 
 .layoutimg {
@@ -240,19 +242,27 @@ p {
 background: linear-gradient(270deg, rgba(0,0,0,0) 0%, rgb(0, 0, 255) 13%, rgba(0,0,255,1) 82%, rgba(0,0,0,0) 100%);}
 
 @media (max-width:499px) {
-    .body {
-        width: 400px;
-        height: 600px;
-        margin-top: 10px;
-    }
+
 
     body {
-        height: 100%;
+        margin: 0;
+    }
+    .body {
+        margin: 0;
+        width: 100%;
+        height: unset;
+        margin-top: 0px;
+    }
+    .page-grid {
+        width: 100%;
     }
 
     .content {
         width: 95%;
         height: 490px;
+        justify-self: center;
+        justify-content: center;
+        margin: auto auto;
         margin-top: 75px;
     }
 
@@ -262,6 +272,7 @@ background: linear-gradient(270deg, rgba(0,0,0,0) 0%, rgb(0, 0, 255) 13%, rgba(0
         top: 70vh;
         left: 30vw;
         height: 20%;
+        min-width: auto;
     }
 
     .main-button {
