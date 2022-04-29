@@ -242,8 +242,6 @@ p {
 background: linear-gradient(270deg, rgba(0,0,0,0) 0%, rgb(0, 0, 255) 13%, rgba(0,0,255,1) 82%, rgba(0,0,0,0) 100%);}
 
 @media (max-width:499px) {
-
-
     body {
         margin: 0;
     }
