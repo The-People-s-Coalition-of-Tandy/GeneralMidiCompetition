@@ -17,13 +17,6 @@
 
         function buttonReturn(e) {
             e.src = "./index_files/submitFixed1.png";
-
-            const form = document.querySelector("#signupForm");
-            if (form.checkValidity()) {
-                form.submit();
-            } else {
-                form.reportValidity();
-            }
         }
     </script>
 </head>
@@ -46,12 +39,14 @@
                 <div class="field">
                     <label for="username">Username</label><br>
                     <input type="text" name="username" id="username" required placeholder="Username">
-                </div>
-                <input style="visibility:hidden;" type="submit" value="Submit" class="submit-button">
-                <input type="hidden" name="redirect" value="https://pcotandy.org/successAlt">
+                </div><br>
+                <input type="hidden" name="redirect" value="https://pcotandy.org/success">
+                <input type="image" src="./index_files/submitFixed1.png" onmousedown="buttonClick(this)"
+                    onmouseup="buttonReturn(this)" onmouseout="buttonNormal(this)" name="zSubmitButton" id="zSubmitButton"
+                    alt="Submit Button" />
+
             </form>
-            <img src="./index_files/submitFixed1.png" class="icon" onmousedown="buttonClick(this)"
-                onmouseup="buttonReturn(this)" onmouseout="buttonNormal(this)" alt="Submit Button">
+
         </div>
     </main>
 
