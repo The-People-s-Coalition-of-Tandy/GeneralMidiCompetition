@@ -13,6 +13,8 @@
     src: url('./index_files/TandyOS.ttf');
 }
 
+
+
 body {
     color: var(--color3);
     background-image: url("./index_files/noteTile.jpeg");
@@ -25,14 +27,41 @@ body {
     animation: scrolling-background 5s linear infinite;
 }
 
+
+    
+
+
+
 .page-grid {
-    display: flex;
-    /* display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "logo info"; */
+    /* display: flex; */
+    display: grid;
+    /* grid-template-rows: 1fr; */
+    grid-template-columns: 1fr 900px;
+    /* grid-template-areas: "logo info"; */
+    /* grid-auto-flow: column; */
     justify-items: center;
     align-items: center;
+    width: 100%;
+}
+
+.big-tandy {
+    /* height: 80%; */
+    order: 1;
+    /* min-width: 235px; */
+    max-width: 400px;
+    border: 10px solid black;
+    /* grid-area: logo; */
+    justify-self: center;
+
+}
+
+.body {
+    order: 2;
+    margin: 0 auto;
+    width: 900px;
+    height: 650px;
+    margin-top: 30px;
+    /* grid-area: info; */
 }
 
 @-webkit-keyframes scrolling-background {
@@ -122,22 +151,9 @@ p {
     margin: 15px;
 }
 
-.big-tandy {
-    /* height: 80%; */
-    min-width: 235px;
-    max-width: 400px;
-    border: 10px solid black;
-    /* grid-area: logo; */
-    justify-self: end;
-}
 
-.body {
-    margin: 0 auto;
-    width: 900px;
-    height: 650px;
-    margin-top: 30px;
-    /* grid-area: info; */
-}
+
+
 
 .layoutimg {
     margin: 0 auto;
@@ -256,7 +272,9 @@ p {
     background: rgb(0,0,0);
 background: linear-gradient(270deg, rgba(0,0,0,0) 0%, rgb(0, 0, 255) 13%, rgba(0,0,255,1) 82%, rgba(0,0,0,0) 100%);}
 
-@media (max-width:499px) {
+
+
+@media (max-width:1000px) {
     body {
         margin: 0;
     }
@@ -267,7 +285,11 @@ background: linear-gradient(270deg, rgba(0,0,0,0) 0%, rgb(0, 0, 255) 13%, rgba(0
         margin-top: 0px;
     }
     .page-grid {
-        width: 100%;
+    
+        grid-template-columns: 1fr ;
+        gap: 50px;
+
+
     }
 
     .content {
@@ -280,12 +302,15 @@ background: linear-gradient(270deg, rgba(0,0,0,0) 0%, rgb(0, 0, 255) 13%, rgba(0
     }
 
     .big-tandy {
-        position: absolute;
+        /* position: absolute; */
+        order: 3;
+        max-width: 400px;
         justify-self: center;
-        top: 70vh;
+        /* border: ridge red 10px */
+        /* top: 70vh;
         left: 30vw;
         height: 20%;
-        min-width: auto;
+        min-width: auto; */
     }
 
     .main-button {
