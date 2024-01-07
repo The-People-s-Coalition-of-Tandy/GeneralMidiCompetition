@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script
+        src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0">
+    </script>
+
+    <title>Live Midi</title>
+</head>
+
+<body>
+    <canvas id="myCanvas"></canvas>
+
+    <midi-player src="../sparkle.mid" sound-font="https://storage.googleapis.com/magentadata/js/soundfonts/sgm_plus"
+        id="mainPlayer">
+    </midi-player>
+
+    <div id="browse">
+        <label for="midiFile">Load MIDI file:</label>
+        <input type="file" id="midiFile" name="midiFile" accept="audio/midi, audio/x-midi">
+    </div>
+
+
+    <img id="ctLogo" src="https://webring.pcotandy.org/Assets/TandyLogo.png" style="display: none;">
+    <script src="drawings.js"></script>
+    <script src="midi.js"></script>
+
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+
+            for (const player of document.querySelectorAll('midi-player')) {
+                for (const event of ['load', 'start', 'stop', 'loop', 'note']) {
+                    player.addEventListener(event, console.log);
+                }
+                player.addEventListener('note', (note) => {
+                    // console.log(note.detail.note.pitch);
+                    test.push(new bounce(30, 40, "blue", note.detail.note.pitch, 0))
+                });
+            }
+        });
+        window.addEventListener("keydown", e => {
+            if (e.key == "ArrowUp") {
+                test.push(new bounce(30, 40, "blue", 50, 0))
+            }
+        })
+
+        const fileInput = document.getElementById('midiFile');
+        if (fileInput) {
+            fileInput.addEventListener('change', (e) => {
+                window.core.blobToNoteSequence(e.target.files[0]).then((seq) => {
+                    const player = document.getElementById('mainPlayer')
+                    player.noteSequence = seq;
+                    setTimeout(() => {
+                        player.start();
+                    }, 2000);
+
+                }).catch((reason) => {
+                    alert('Failed to load MIDI file.');
+                    console.error(reason);
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
