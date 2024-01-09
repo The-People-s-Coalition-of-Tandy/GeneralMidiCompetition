@@ -24,9 +24,9 @@ function bounce(width, height, color, x, y, type) {
     this.y = y;    
     this.speedX = 0;
     this.speedY = 0;    
-    this.gravity = 0.5;
+    this.gravity = 0.2;
     this.gravitySpeed = 0;
-    this.bounce = 0.5;
+    this.bounce = 0.4;
     this.update = function(ctx) {
         ctx.fillStyle = color;
         // ctx.fillRect(this.x, this.y, this.width, this.height);
