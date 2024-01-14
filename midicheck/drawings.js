@@ -1,23 +1,12 @@
 const img = document.getElementById("ctLogo");
-console.log(img);
-
-function circle(ctx, note, velocity) {
-    const normalizedNote = normalize(59, 74, note) * innerWidth
-    const normalizedVelocity = normalize(velocity)
-    console.log(normalizedNote);
-    ctx.beginPath();
-    ctx.strokeStyle = "red";
-    ctx.arc(normalizedNote, 50, 40, 0, 2 * Math.PI);
-    ctx.stroke();
-
-}
+const images = document.getElementsByClassName("droplet");
+console.log(images[1]);
 
 function normalize(min, max, val) {
     return (val - min)/(max - min)
 }
 
-function bounce(width, height, color, x, y, type) {
-    this.type = type;
+function bounce(width, height, color, x, y, channel) {
     this.width = width;
     this.height = height;
     this.x = normalize(11, 121, x) * innerWidth;
@@ -27,10 +16,13 @@ function bounce(width, height, color, x, y, type) {
     this.gravity = 0.5;
     this.gravitySpeed = 0;
     this.bounce = 0.5;
+    this.channel = channel;
+    console.log(this.channel);
+    this.img = images[this.channel % 8]
+
     this.update = function(ctx) {
         ctx.fillStyle = color;
-        // ctx.fillRect(this.x, this.y, this.width, this.height);
-        ctx.drawImage(img, this.x, this.y, this.width, this.height)
+        ctx.drawImage(this.img, this.x, this.y)
     }
     this.newPos = function(ctx) {
         this.gravitySpeed += this.gravity;
@@ -39,7 +31,7 @@ function bounce(width, height, color, x, y, type) {
         this.hitBottom(ctx);
     }
     this.hitBottom = function(ctx) {
-        var rockbottom = ctx.canvas.height - this.height;
+        var rockbottom = ctx.canvas.height - this.img.height;
         if (this.y > rockbottom) {
             this.y = rockbottom;
             this.gravitySpeed = -(this.gravitySpeed * this.bounce);

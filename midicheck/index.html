@@ -19,13 +19,37 @@
         id="mainPlayer">
     </midi-player>
 
-    <div id="browse">
-        <label for="midiFile">Load MIDI file:</label>
-        <input type="file" id="midiFile" name="midiFile" accept="audio/midi, audio/x-midi">
-    </div>
+    <dialog id="dialog" open>
+        <h1>
+            Welcome to the People's Coalition of Tandy General MIDI Verification Tool
+        </h1>
+        <div id="browse">
+            <label for="midiFile">Load MIDI file:</label>
+            <input type="file" id="midiFile" name="midiFile" accept="audio/midi, audio/x-midi">
+        </div>
+        <p>
+            Upload your .mid file, and we'll play it back for you. This is a quick way to see if your MIDI is configured correctly.
+
+            <div>NOTE: Depending on the synth you used to create the file, it may sound different than you expect. However, each instrument should be roughly the same, as per the General MIDI standard. A piano part should sound like some kind of piano, a woodblock some sort of woodblock, and a "crystal" FX some sort of crystal FX.</div>
+        </p>
+
+        <hr>
+        <div class="logos">
+            <img src="../index_files/GMLOGO.GIF" alt="General MIDI Logo" width="50px"/>
+            <img src="../index_files/pcotandylogo.ico" width="50px"/>
+        </div>
+    </dialog>
 
 
-    <img id="ctLogo" src="https://webring.pcotandy.org/Assets/TandyLogo.png" style="display: none;">
+    <img class="droplet" src="https://webring.pcotandy.org/Assets/TandyLogo.png" style="display: none;">
+    <img class="droplet" src="https://github.com/The-People-s-Coalition-of-Tandy/PCoTandy/blob/main/Assets/PCoTandyLogo3.png?raw=true" style="display: none;">
+    <img class="droplet" src="https://github.com/The-People-s-Coalition-of-Tandy/PCoTandy/blob/main/Assets/PCoTandyLogo2.png?raw=true" style="display: none;">
+    <img class="droplet" src="https://github.com/The-People-s-Coalition-of-Tandy/PCoTandy/blob/main/Assets/PCoTandyLogo4.png?raw=true" style="display: none;">
+    <img class="droplet" src="../index_files/THATCH.GIF" style="display: none;">
+    <img class="droplet" src="../index_files/INFO.GIF" style="display: none;">
+    <img class="droplet" src="../index_files/SignupButtonOut1.png" style="display: none;">
+    <img class="droplet" src="../index_files/submitbutton.png" style="display: none;">
+    
     <script src="drawings.js"></script>
     <script src="midi.js"></script>
 
@@ -35,19 +59,19 @@
 
             for (const player of document.querySelectorAll('midi-player')) {
                 for (const event of ['load', 'start', 'stop', 'loop', 'note']) {
-                    player.addEventListener(event, console.log);
+                    // player.addEventListener(event, console.log);
                 }
                 player.addEventListener('note', (note) => {
-                    // console.log(note.detail.note.pitch);
-                    test.push(new bounce(30, 40, "blue", note.detail.note.pitch, 0))
+                    console.log(note.detail.note.instrument);
+                    test.push(new bounce(30, 40, "blue", note.detail.note.pitch, 0, note.detail.note.instrument))
                 });
             }
         });
-        window.addEventListener("keydown", e => {
-            if (e.key == "ArrowUp") {
-                test.push(new bounce(30, 40, "blue", 50, 0))
-            }
-        })
+        // window.addEventListener("keydown", e => {
+        //     if (e.key == "ArrowUp") {
+        //         test.push(new bounce(30, 40, "blue", 50, 0))
+        //     }
+        // })
 
         const fileInput = document.getElementById('midiFile');
         if (fileInput) {
