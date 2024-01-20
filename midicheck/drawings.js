@@ -15,14 +15,14 @@ function bounce(width, height, color, x, y, channel) {
     this.speedY = 0;    
     this.gravity = 0.5;
     this.gravitySpeed = 0;
-    this.bounce = 0.5;
+    this.bounce = 0.4 + Math.random() * 0.1;
     this.channel = channel;
+    this.img = images[this.channel % 16]
     console.log(this.channel);
-    this.img = images[this.channel % 8]
 
     this.update = function(ctx) {
         ctx.fillStyle = color;
-        ctx.drawImage(this.img, this.x, this.y)
+        ctx.drawImage(this.img, this.x, this.y, this.img.width, this.img.height)
     }
     this.newPos = function(ctx) {
         this.gravitySpeed += this.gravity;
