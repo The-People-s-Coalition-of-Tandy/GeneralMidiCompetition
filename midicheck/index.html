@@ -41,7 +41,8 @@
             <div><span style="color: rgb(255, 166, 0);">Note:</span> The sound generator used on this site probably
                 sounds different than what you heard while composing. However, the instruments should be recognizable….
                 that is, as long as your Instruments have been properly indicated by the Program Changes in the General
-                MIDI standard. <b style="color: lightcoral;">Making sure your Program Changes are correct is the main goal
+                MIDI standard. <b style="color: lightcoral;">Making sure your Program Changes are correct is the main
+                    goal
                     of this Web-Tool.</b>
                 Ideally, the piano part should sound like some sort of piano, a woodblock some sort of woodblock, and a
                 "crystal" FX some sort of crystal FX.</div>
@@ -64,33 +65,68 @@
 
     <img class="droplet" src="https://webring.pcotandy.org/Assets/TandyLogo.png" style="display: none;" width="50"
         height="60">
+
     <img class="droplet"
         src="https://github.com/The-People-s-Coalition-of-Tandy/PCoTandy/blob/main/Assets/PCoTandyLogo3.png?raw=true"
         width="50" height="60" style="display: none;">
+    <img class="droplet" src="../index_files/SignupButtonOut1.png" style="display: none;">
+    <img class="droplet" src="../index_files/ENVE.GIF" style="display: none;">
     <img class="droplet"
         src="https://github.com/The-People-s-Coalition-of-Tandy/PCoTandy/blob/main/Assets/PCoTandyLogo2.png?raw=true"
         width="50" height="60" style="display: none;">
     <img class="droplet"
         src="https://github.com/The-People-s-Coalition-of-Tandy/PCoTandy/blob/main/Assets/PCoTandyLogo4.png?raw=true"
         width="50" height="60" style="display: none;">
-    <img class="droplet" src="../index_files/THATCH.GIF" width="60" height="60" style="display: none;">
+    <img class="droplet" src="../index_files/submitbutton.png" style="display: none;">
+
     <img class="droplet" src="../index_files/INFO.GIF" width="60" height="60" style="display: none;">
-    <img class="droplet" src="../index_files/ENVE.GIF" style="display: none;">
-    <img class="droplet" src="../index_files/SignupButtonOut1.png" style="display: none;">
-    <img class="droplet" src="../index_files/submitbutton.png" style="display: none;">
-    <img class="droplet" src="../index_files/check.ICO" style="display: none;">
-    <img class="droplet" src="../index_files/AnnualReport.ICO" style="display: none;">
-    <img class="droplet" src="../index_files/Advanced.ico" style="display: none;">
+    <img class="droplet" src="../index_files/THATCH.GIF" width="60" height="60" style="display: none;">
+
+    <img class="droplet" width="60" height="60" src="../index_files/check.ICO" style="display: none;">
+    <img class="droplet" width="60" height="60" src="../index_files/AnnualReport.ICO" style="display: none;">
+    <img class="droplet" width="60" height="60" src="../index_files/Advanced.ico" style="display: none;">
     <img class="droplet" src="../index_files/GMLOGO.GIF" width="60" height="42" style="display: none;">
-    <img class="droplet" src="../index_files/submitbutton.png" style="display: none;">
-    <img class="droplet" src="../index_files/submitbutton.png" style="display: none;">
-    <img class="droplet" src="../index_files/submitbutton.png" style="display: none;">
+    <img class="droplet" width="60" height="60" src="https://www.pcotandy.org/Assets/Funny/CDROM-IC.GIF"
+        style="display: none;">
+    <img class="droplet" width="60" height="60" src="https://www.pcotandy.org/Assets/join.ICO" style="display: none;">
+    <img class="droplet" width="60" height="60" src="https://www.pcotandy.org/Assets/grasselit.ICO"
+        style="display: none;">
 
     <script src="drawings.js"></script>
     <script src="midi.js"></script>
 
 
     <script>
+        function addText() {
+            const script = [
+                "Introducing the General MIDI Verification Tool",
+                "Dear friends,",
+                "As the 31st Annual General MIDI Competition deadline approaches",
+                "We are happy to offer you a new MIDI tool",
+                "To check that your program changes are correct",
+                "And to provide ease of mind during this competition season",
+                "Available now",
+                "https://<br>midicompetition<br>.pcotandy.org<br>/midicheck"
+            ]
+            const textContainer = document.createElement('div');
+            textContainer.id = 'textContainer';
+
+            const text = document.createElement('p');
+            document.body.appendChild(textContainer);
+            textContainer.appendChild(text);
+            text.innerHTML = script[0];
+            textContainer.classList.add('show');
+            let textIndex = 1;
+            const intervalId = setInterval(() => {
+                text.innerHTML = script[textIndex];
+                if (textIndex++ >= script.length - 1) {
+                    window.clearInterval(intervalId);
+                    setTimeout(() => {
+                        textContainer.classList.add('hide');
+                    }, 5000);
+                }
+            }, 4700);
+        }
         window.addEventListener('DOMContentLoaded', function () {
 
             for (const player of document.querySelectorAll('midi-player')) {
@@ -118,12 +154,16 @@
                     player.noteSequence = seq;
                     modal.classList.add('close');
                     logo.classList.add('show');
-                    
+
                     setTimeout(() => {
                         modal.close()
                         logo.classList.remove('show');
                         player.start();
                     }, 3000);
+
+                    setTimeout(() => {
+                        addText();
+                    }, 5500);
 
                 }).catch((reason) => {
                     alert('Failed to load MIDI file.');

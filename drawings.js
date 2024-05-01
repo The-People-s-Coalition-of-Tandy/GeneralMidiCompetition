@@ -12,7 +12,7 @@ function bounce(width, height, color, x, y, channel) {
     this.x = normalize(11, 121, x) * innerWidth;
     this.y = y;    
     this.speedX = 0;
-    this.speedY = 0; 
+    this.speedY = 0;    
     this.gravity = 0.1;
     this.gravitySpeed = 0;
     this.bounce = 0.05 + Math.random() * 0.1;
