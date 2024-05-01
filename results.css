@@ -7,6 +7,8 @@ html {
 table.award-table, .award-table th, .award-table td {
     border:1px solid black;
     text-align: center;
+    transition: all .6s ease-out;
+
   }
 
   .award-div {
@@ -16,9 +18,11 @@ table.award-table, .award-table th, .award-table td {
     transition:all .6s ease-out;
   }
 
-  .award-div:hover {
-    border: 2px ridge purple;
-    background-color: rgb(181, 171, 181);
+  .award-table:hover {
+    background-color: rgb(170, 170, 170);
+
+    /* border: 2px ridge purple; */
+    /* background-color: rgb(181, 171, 181); */
   }
 
   .main-div {
@@ -43,7 +47,7 @@ table.award-table, .award-table th, .award-table td {
       }
   }
 
-  /* .award-div:hover {
+  /* .award-table:hover {
       transform: scale(1.5) rotate(360deg);
 transition: all .6s ease-out;
 box-shadow: 5px 5px 15px 5px #000000;
@@ -62,6 +66,10 @@ cursor: help;
   .header b {
       padding: 0 15px;
   }
+
+  .midiSubmission:hover {
+    cursor:copy;
+        }
 
   .thanks {
     width: 400px;
@@ -104,10 +112,14 @@ cursor: help;
         color: black;
       }
 
-      .award-div:hover {
+      /* .award-div:hover {
         transform: none;
   box-shadow: none;
   cursor: help;
+    } */
+
+    .midiSubmission:hover {
+cursor: wait;
     }
 
       .main-div {
