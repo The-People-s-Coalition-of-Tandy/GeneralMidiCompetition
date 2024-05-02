@@ -88,6 +88,22 @@ h1 {
     padding: 2px;
 }
 
+.loader {
+    border-top: 8px solid blue;
+    border-right: 8px solid green;
+    border-bottom: 8px solid red;
+    border-left: 8px solid pink;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
 #logoCenter.show {
     opacity: 1;
     transform: translate(-50%, -50%) scale(2);

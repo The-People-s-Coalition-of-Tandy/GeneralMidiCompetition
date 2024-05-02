@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+  href="https://cdn.jsdelivr.net/npm/@logue/sf2synth@latest/dist/style.min.css"
+  rel="stylesheet"
+/>
+    <title>logue test</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/@logue/sf2synth@latest/dist/sf2synth.iife.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@logue/smfplayer@latest/dist/smfplayer.iife.min.js"></script>
+<script>
+  const wml = new SoundFont.WebMidiLink({});
+  console.log(wml);
+    
+    /** @type {boolean} */
+    const loop = true;
+    /** @type {boolean} */
+    const cc111 = true;
+    /** @type {boolean} */
+    const falcom = true;
+    /** @type {boolean} */
+    const mfi = true;
+    /** @type {number} */
+    const tempo = 1.0;
+    /** @type {number} 0-16383 */
+    const volume = 16383 * 0.5;
+
+    const player = new SMF.Player();
+    // player settings
+    player.setLoop(loop); // Player Loop
+    player.setCC111Loop(cc111); // CC#111 Loop
+    player.setFalcomLoop(falcom); // Ys2 Eternal Loop
+    player.setMFiLoop(mfi); // MFi Loop
+    player.setTempoRate(tempo); // Playback tempo rate
+    player.setMasterVolume(volume); // Master Volume
+  player.setWebMidiLink(wml);
+  
+    player.loadMidiFile('./midi/GM RAREBUS FOR MIDI.mid');
+    player.play();
+</script>
+</body>
+</html>
