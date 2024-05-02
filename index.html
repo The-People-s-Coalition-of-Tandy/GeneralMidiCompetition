@@ -353,33 +353,42 @@
         for (const submission of submissions) {
             submission.addEventListener('click', playSong);
         }
+        
         async function playSong(e) {
-          const textIntro = document.getElementById('songIntro');
-          textIntro.innerHTML = e.target.dataset.title;
-            console.log(e.target.dataset.filename);
-            const midiFile = await fetch(`./midi/${e.target.dataset.filename}`).then((response) => {
-                return response.blob();
-            })
-            console.log(midiFile);
-                window.core.blobToNoteSequence(midiFile).then((seq) => {
-                    const player = document.getElementById('mainPlayer')
-                    const modal = document.getElementById('dialog');
-                    const logo = document.getElementById('logoCenter');
+    // Ensure AudioContext is started or resumed
+    if (Tone.context.state !== 'running') {
+        await Tone.start();
+        console.log('AudioContext started');
+    }
 
-                    player.noteSequence = seq;
-                    // modal.classList.add('close');
-                    logo.classList.add('show');
+    const textIntro = document.getElementById('songIntro');
+    textIntro.innerHTML = e.target.dataset.title;
+    console.log(e.target.dataset.filename);
+    const midiFile = await fetch(`./midi/${e.target.dataset.filename}`).then((response) => {
+        return response.blob();
+    });
+    console.log(midiFile);
 
-                    setTimeout(() => {
-                        // modal.close()
-                        logo.classList.remove('show');
-                        player.start();
-                    }, 3000);
-                }).catch((reason) => {
-                    alert('Failed to load MIDI file.');
-                    console.error(reason);
-                });
-            }
+    window.core.blobToNoteSequence(midiFile).then((seq) => {
+        const player = document.getElementById('mainPlayer');
+        const modal = document.getElementById('dialog');
+        const logo = document.getElementById('logoCenter');
+
+        player.noteSequence = seq;
+        // modal.classList.add('close');
+        logo.classList.add('show');
+
+        setTimeout(() => {
+            // modal.close()
+            logo.classList.remove('show');
+            player.start();
+        }, 3000);
+    }).catch((reason) => {
+        alert('Failed to load MIDI file.');
+        console.error(reason);
+    });
+}
+
         function addText() {
             const script = [
                 `<i>Introducing<i>         <div style="display: flex; align-items: center;">
