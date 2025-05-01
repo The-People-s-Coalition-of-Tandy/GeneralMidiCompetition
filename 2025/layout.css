@@ -1,0 +1,324 @@
+:root {
+    --color1: rgba(12, 12, 53, 0.772);
+    --header: rgb(52, 9, 54);
+    --color3: rgb(16, 8, 55);
+    --title: rgb(27, 144, 119);
+    --bg: #0a142b;
+    --color6: #f524a9;
+}
+
+
+@font-face {
+    font-family: TandyOS;
+    src: url('./index_files/TandyOS.ttf');
+}
+
+
+
+body {
+    color: var(--color3);
+    background-image: url("./index_files/noteTile.jpeg");
+    background-color: var(--bg);
+    background-blend-mode: soft-light;
+    font-family: 'basiic';
+    -webkit-animation: scrolling-background 5s linear infinite;
+    -moz-animation: scrolling-background 5s linear infinite;
+    -o-animation: scrolling-background 5s linear infinite;
+    animation: scrolling-background 5s linear infinite;
+}
+
+
+
+
+
+
+.page-grid {
+    /* display: flex; */
+    display: grid;
+    /* grid-template-rows: 1fr; */
+    grid-template-columns: 1fr 900px;
+    /* grid-template-areas: "logo info"; */
+    /* grid-auto-flow: column; */
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+}
+
+.big-tandy {
+    /* height: 80%; */
+    order: 1;
+    /* min-width: 235px; */
+    max-width: 400px;
+    border: 10px solid black;
+    /* grid-area: logo; */
+    justify-self: center;
+
+}
+
+.body {
+    order: 2;
+    margin: 0 auto;
+    width: 900px;
+    height: 650px;
+    margin-top: 30px;
+    /* grid-area: info; */
+}
+
+@-webkit-keyframes scrolling-background {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 240px;
+    }
+}
+
+@font-face {
+    font-family: 'basiic';
+    src: url(https://cinni.net/fonts/basiic.ttf);
+}
+
+@font-face {
+    font-family: 'Bangalore';
+    src: url("./index_files/Bangalore.ttf");
+}
+
+::selection {
+    background: pink;
+    color: #e000c3;
+}
+
+a {
+    color: #be778d;
+    letter-spacing: 1px;
+}
+
+a:hover {
+    color: #f524a9;
+}
+
+hr {
+    color: #be778d;
+    border-top: 1px solid #be778d;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    width: 70%;
+}
+
+h1 {
+    text-transform: uppercase;
+    background: linear-gradient(0deg, rgba(190, 119, 141, 1) 0%,
+            rgba(190, 119, 141, 1) 5%, rgba(235, 183, 194, 0) 5%, rgba(249, 162, 243, 0) 100%);
+    font-size: 1.2em;
+    padding: 1px;
+    padding-left: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+    /* font-family: "Bangalore"; */
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.title {
+    font-family: "TandyOS";
+    color: var(--title);
+    font-size: larger;
+}
+
+.title-text {
+    font-family: 'Times New Roman', Times, serif;
+    padding: 15px 0 15px 0;
+}
+
+h2 {
+    text-transform: uppercase;
+    background: linear-gradient(90deg, rgba(249, 162, 243, 0) 0%, rgba(235, 183, 194, 1) 25%, rgba(235, 183, 194, 1) 75%, rgba(249, 162, 243, 0) 100%);
+    font-size: 1em;
+    padding: 1px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+span {
+    font-weight: bold;
+}
+
+p {
+    text-align: left;
+    margin: 15px;
+}
+
+
+
+
+
+.layoutimg {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 0;
+}
+
+.content {
+    z-index: 1;
+    position: relative;
+    padding: 10px;
+    height: 575px;
+    margin-top: 30px;
+}
+
+.header {
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 1em;
+    color: #be778d;
+    font-weight: Bold;
+    text-shadow: 0px 0px 1px white;
+    text-align: right;
+    background-color: var(--header);
+}
+
+.nav {
+    padding: 5px;
+    background: #fcf1f6;
+    border: 1px solid #be778d;
+    border-radius: 2px;
+    margin: 5px;
+    font-size: .9em;
+    text-align: center;
+}
+
+.nav a {
+    margin: 1px;
+    padding: 1px;
+}
+
+.blog {
+    padding: 5px;
+    background: #fcf1f6;
+    border: 1px solid #be778d;
+    border-radius: 2px;
+    Margin: 5px;
+    font-size: 1em;
+    height: 80%;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+.blog img {
+    width: auto;
+    max-width: 80%;
+    height: auto;
+    margin: 3px;
+}
+
+.footer {
+    text-align: right;
+    font-size: .6em;
+    padding: 0;
+    margin: 5px;
+    color: #e2bfe2;
+}
+
+.footer a {
+    color: pink;
+    background: none;
+}
+
+.blog img.icon {
+
+    float: right;
+    padding: 1px;
+    margin-right: 10px;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background: #fcf1f6;
+}
+
+::-webkit-scrollbar-track {
+    background: #fcf1f6;
+    border-radius: 0px;
+    width: 0px;
+    border: 1px dotted #be778d;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f0d0df;
+    border: 1px dotted #be778d;
+    border-radius: 0px;
+}
+
+
+.intro {
+    font-size: 410px;
+
+}
+
+.small-list {
+    font-size: 12px;
+
+}
+
+.marquee1 {
+    color: pink;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 255) 13%, rgba(0, 0, 255, 1) 82%, rgba(0, 0, 0, 0) 100%);
+}
+
+
+
+@media (max-width:1000px) {
+    body {
+        margin: 0;
+    }
+
+    .body {
+        margin: 0;
+        width: 100%;
+        height: unset;
+        margin-top: 0px;
+    }
+
+    .page-grid {
+
+        grid-template-columns: 1fr;
+        gap: 50px;
+
+
+    }
+
+    .content {
+        width: 95%;
+        height: 490px;
+        justify-self: center;
+        justify-content: center;
+        margin: auto auto;
+        margin-top: 75px;
+    }
+
+    .big-tandy {
+        /* position: absolute; */
+        order: 3;
+        max-width: 400px;
+        width: 90%;
+        justify-self: center;
+        /* border: ridge red 10px */
+        /* top: 70vh;
+        left: 30vw;
+        height: 20%;
+        min-width: auto; */
+    }
+
+    .main-button {
+        font-family: "TandyOS";
+        position: relative;
+    }
+}
